@@ -1,0 +1,141 @@
+<div ng-if="user.isLoggedIn">
+
+    <div class="content-title text-center">
+        <ul class="nav nav-pills nav-table">
+            <li role="presentation" class="active"><a>Panel Dasbor IMUNISASI</a></li>
+        </ul>
+    </div>
+
+    <div ng-controller="AdminController" ng-init="getStatistics()">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="panel panel-primary admin-panel">
+                    <div class="panel-heading">Fungsi Administrasi</div>
+                    <div class="panel-body">
+                        <div class="row" smooth-show>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-md-1">
+                                       Id: <br><strong>{{ user.id }}</strong>
+                                    </div>
+                                    <div class="col-md-2">
+                                        Nama: <br><strong>{{ user.name | uppercase }}</strong>
+                                    </div>
+                                    <div class="col-md-2">
+                                        Roles: <br><strong>{{ user.role }}</strong>
+                                    </div>
+                                    <div class="col-md-4">
+                                        E-mail: <br><strong>{{ user.email }}</strong>
+                                    </div>
+                                    <div class="col-md-3">
+                                        Last Login: <br><strong>{{ user.logged_in }}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" smooth-show>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="thumbnail tile tile-medium tile-blue">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/settings" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-cog"></i></div>
+                                            <div class="label">Pengaturan</div>
+                                            <div class="number">{{ admin.settings }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-red">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/users" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-user"></i></div>
+                                            <div class="label">Profil</div>
+                                            <div class="number">{{ admin.users }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-pumpkin">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/acl" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-home"></i></div>
+                                            <div class="label">ACL</div>
+                                            <div class="number">{{ admin.acl }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-green">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/categories" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-dedent"></i></div>
+                                            <div class="label">Kategori</div>
+                                            <div class="number">{{ admin.categories }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-yellow">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/pages" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-edit"></i></div>
+                                            <div class="label">Halaman</div>
+                                            <div class="number">{{ admin.pages }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-wet-asphalt">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/images" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-film"></i></div>
+                                            <div class="label">Galeri</div>
+                                            <div class="number">{{ admin.images }}</div>
+                                        </a>
+                                    </div>
+									<div class="thumbnail tile tile-medium tile-wet-asphalt">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/suara" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-film"></i></div>
+                                            <div class="label">Suara</div>
+                                            <div class="number">{{ admin.images }}</div>
+                                        </a>
+                                    </div>
+									<div class="thumbnail tile tile-medium tile-wet-asphalt">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/video" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-film"></i></div>
+                                            <div class="label">Video</div>
+                                            <div class="number">{{ admin.images }}</div>
+                                        </a>
+                                    </div>
+									<div class="thumbnail tile tile-medium tile-wet-asphalt">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/learning" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-film"></i></div>
+                                            <div class="label">Learning</div>
+                                            <div class="number">{{ admin.images }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-peter-river">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/messages" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-envelope-o"></i></div>
+                                            <div class="label">Pesan</div>
+                                            <div class="number">{{ admin.messages }}</div>
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail tile tile-medium tile-alizarin">
+                                        <a href="http://danigunawan.duckdns.org/projectimunisasi/visitors" class="fa-links">
+                                            <div class="icon"><i class="fa fa-3x fa-globe"></i></div>
+                                            <div class="label">Kunjungan</div>
+                                            <div class="number">{{ admin.visitors }}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a href="http://danigunawan.duckdns.org/projectimunisasi/logout" class="btn btn-info">Keluar</a>
+                        <a href="http://danigunawan.duckdns.org/projectimunisasi/" class="btn btn-danger">Frontend</a>
+                    </div>
+                </div>
+                <div ng-if="processing">
+                    <div class="text-center"><img src="public/img/loader.gif"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div ng-include="layout.messager"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
