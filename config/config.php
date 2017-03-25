@@ -28,10 +28,4 @@ define ('MAILER_DIR', dirname(__FILE__) . '/../lib/mailer/');
 define ('THUMB_WIDTH', 150);
 define ('THUMB_HEIGHT', 150);
 
-/*
- * Application install script
- */
- 
-define ('INSTALL_SCRIPT', dirname(__FILE__) . '/../install/install_database.php');
-
 ?>
