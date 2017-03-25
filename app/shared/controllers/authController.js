@@ -49,7 +49,7 @@ angular.module('authController', ['authService', 'config'])
                 $scope.user = response.data;
             });
             if (response.success) {
-                $location.path('/admin');
+                $location.path('/login'); //defaultnya /admin jadi jika berhasil mendaftar langsung redirect ke /admin
             }
             else {
                 $scope.error = true;
